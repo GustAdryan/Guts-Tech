@@ -1,0 +1,89 @@
+{
+    "produtos": [
+      {
+        "id": 1,
+        "nome": "Placa de Vídeo RTX 4070",
+        "descricao": "Desempenho de última geração para seus jogos e aplicações gráficas.",
+        "preco": 3599.00,
+        "imagem": "imagens/rtx4070.jpg"
+      },
+      {
+        "id": 2,
+        "nome": "Processador AMD Ryzen 7 5800X",
+        "descricao": "Potência e eficiência para gamers e criadores de conteúdo.",
+        "preco": 1799.00,
+        "imagem": "imagens/ryzen5800x.jpg"
+      },
+      {
+        "id": 3,
+        "nome": "Placa-mãe ASUS B550",
+        "descricao": "Compatível com processadores Ryzen, ideal para setups modernos.",
+        "preco": 899.00,
+        "imagem": "imagens/asusb550.jpg"
+      },
+      {
+        "id": 4,
+        "nome": "Memória RAM 16GB DDR4",
+        "descricao": "Alto desempenho para multitarefas e jogos.",
+        "preco": 399.00,
+        "imagem": "imagens/ram16gb.jpg"
+      },
+      {
+        "id": 5,
+        "nome": "SSD NVMe 1TB",
+        "descricao": "Armazenamento ultra rápido para inicializações e carregamentos instantâneos.",
+        "preco": 549.00,
+        "imagem": "imagens/ssd1tb.jpg"
+      },
+      {
+        "id": 6,
+        "nome": "Fonte 650W 80 Plus Bronze",
+        "descricao": "Estável e segura para seu setup gamer.",
+        "preco": 429.00,
+        "imagem": "imagens/fonte650w.jpg"
+      },
+      {
+        "id": 7,
+        "nome": "Gabinete Gamer com LED RGB",
+        "descricao": "Design moderno com ventilação eficiente e iluminação RGB.",
+        "preco": 499.00,
+        "imagem": "imagens/gabinete.jpg"
+      },
+      {
+        "id": 8,
+        "nome": "Cooler para CPU Cooler Master",
+        "descricao": "Refrigeração eficiente e silenciosa para sua CPU.",
+        "preco": 199.00,
+        "imagem": "imagens/coolermaster.jpg"
+      },
+      {
+        "id": 9,
+        "nome": "Monitor Gamer 27'' 144Hz",
+        "descricao": "Alta taxa de atualização e tempo de resposta para jogos competitivos.",
+        "preco": 1299.00,
+        "imagem": "imagens/monitor144hz.jpg"
+      },
+      {
+        "id": 10,
+        "nome": "Mouse Gamer RGB 16000 DPI",
+        "descricao": "Alta precisão, iluminação RGB e botões programáveis.",
+        "preco": 159.00,
+        "imagem": "imagens/mousegamer.jpg"
+      },
+      {
+        "id": 11,
+        "nome": "Teclado Mecânico RGB",
+        "descricao": "Switches mecânicos, iluminação personalizável e desempenho gamer.",
+        "preco": 299.00,
+        "imagem": "imagens/tecladomecanico.jpg"
+      },
+      {
+        "id": 12,
+        "nome": "Headset Gamer 7.1 Surround",
+        "descricao": "Áudio imersivo e microfone com cancelamento de ruído.",
+        "preco": 349.00,
+        "imagem": "imagens/headsetgamer.jpg"
+      }
+    ]
+  }
+  

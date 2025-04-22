@@ -1,0 +1,11 @@
+{
+  "name": "Guts Tech",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "author": "Gust",
+  "license": "ISC",
+  "description": ""
+}
