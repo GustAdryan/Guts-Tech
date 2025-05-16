@@ -1,47 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guts Tech - Loja Virtual de Hardware</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guts Tech - Loja Virtual de Hardware</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="main-header">
+        <div class="main-header-logo-container">
+          <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+            <img src="/img/menu.svg" alt="Menu" />
+          </button>
+          <img src="/img/logo.svg" alt="Logo Guts Tech" class="Logo-header" />
+        </div>
 
-  <header>
-    <h1>Guts Tech</h1>
-    <nav>
-      <ul>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#sobre">Sobre Nós</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+        <div class="main-header-search">
+          <input
+            type="search"
+            name="search-products"
+            id="search-products"
+            placeholder="O que você procura?"
+            aria-label="Buscar produtos"
+          />
+        </div>
 
-  <main>
-    <section id="produtos">
-        
-    </section>
+        <div class="main-header-kart">
+          <a href="#" aria-label="Carrinho de compras">
+            <img src="/img/kart.svg" alt="Carrinho de compras" />
+          </a>
+        </div>
+      </section>
 
-    
+      <nav class="header-nav" id="mobile-menu">
+        <ul class="header-nav-list">
+          <li class="header-nav-list-item">
+            <button class="header-nav-list-item-button">PC Gamer</button>
+          </li>
+          <li class="header-nav-list-item">
+            <button class="header-nav-list-item-button">Notebooks</button>
+          </li>
+          <li class="header-nav-list-item">
+            <button class="header-nav-list-item-button">Monitores</button>
+          </li>
+          <li class="header-nav-list-item">
+            <button class="header-nav-list-item-button">Periféricos</button>
+          </li>
+          <li class="header-nav-list-item">
+            <button class="header-nav-list-item-button">Suporte</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <section id="sobre">
-      <h2>Sobre Nós</h2>
-      <p>Na Guts Tech, somos apaixonados por tecnologia. Trabalhamos com os melhores componentes de hardware para oferecer qualidade, desempenho e preço justo.</p>
-    </section>
+    <main>
+      <section class="container-ad">
+        <div class="Promocao-inverno">
+          <img
+            src="/img/gutsFeliz.svg"
+            alt="Personagem da Loja Guts Tech Feliz"
+            class="Promocao-inverno-img"
+          />
+          <div class="Promocao-inverno-content">
+            <h2>Promoção Inverno Gamer da <strong>Guts Tech</strong></h2>
+            <p>Produtos com descontos de até <strong>20%</strong></p>
+          </div>
+        </div>
+      </section>
+      <section class="produto-destaque">
+        <h2>Ofertas Imperdíveis</h2>
+        <div class="carousel-container">
+          <button id="prev-button" class="carousel-button">
+            <img src="/img/arrow.png" alt="Anterior" />
+          </button>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Email: atendimento@gutstech.com.br</p>
-      <p>Telefone: (11) 99999-9999</p>
-    </section>
-  </main>
+          <div id="produtos-promocao" class="carousel-produtos"></div>
 
-  <footer>
-    <p>&copy; 2025 Guts Tech. Todos os direitos reservados.</p>
-  </footer>
-  <script type="module" src="./JS/products.js"></script>
-  <script type="module" src="./JS/main.js"></script>
-  <script type="module" src="./JS/ui.js"></script>
-</body>
+          <button id="next-button" class="carousel-button">
+            <img src="/img/arrow.png" alt="Próximo" />
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Produtos</h2>
+        <div id="produtos"></div>
+      </section>
+    </main>
+
+    <footer>
+      <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>
+          Na Guts Tech, somos apaixonados por tecnologia. Trabalhamos com os
+          melhores componentes de hardware para oferecer qualidade, desempenho e
+          preço justo.
+        </p>
+      </section>
+
+      <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: atendimento@gutstech.com.br</p>
+        <p>Telefone: (11) 99999-9999</p>
+      </section>
+      <p>&copy; 2025 Guts Tech. Todos os direitos reservados.</p>
+    </footer>
+    <script type="module" src="./JS/products.js"></script>
+    <script type="module" src="./JS/main.js"></script>
+    <script type="module" src="./JS/ui.js"></script>
+    <script type="module" src="/JS/menu-togge.js"></script>
+    <script type="module" src="/JS/slide.js"></script>
+  </body>
 </html>

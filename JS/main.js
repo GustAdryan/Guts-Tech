@@ -1,6 +1,5 @@
-import UI from "./ui.js"
+import UI from "./ui.js";
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    UI.renderizarProdutos()
-})
+document.addEventListener("DOMContentLoaded", () => {
+  UI.renderizarProdutos();
+});

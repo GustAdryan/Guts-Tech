@@ -1,0 +1,12 @@
+.container-ad {
+  width: 80%;
+  background-color: aqua;
+  border: 2px solid var(--text-color);
+  padding: 2rem;
+}
+
+.Promocao-inverno {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
