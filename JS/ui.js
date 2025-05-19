@@ -3,7 +3,7 @@ import API from "./products.js";
 const UI = {
   async renderizarProdutos() {
     try {
-      const { produtos } = await API.buscarProdutos();
+      const produtos = await API.buscarProdutos(); // <-- Corrigido: acessar diretamente a lista
 
       const secaoPromocao = document.querySelector("#produtos-promocao");
       const secaoNormais = document.querySelector("#produtos");
@@ -54,12 +54,7 @@ function criarProdutoCard(produto) {
     precoDesconto.classList.add("preco-desconto");
     precoDesconto.textContent = `R$ ${produto.preco.toFixed(2)}`;
 
-    const tagDesconto = document.createElement("span");
-    tagDesconto.classList.add("tag-desconto");
-    tagDesconto.textContent = "-20%";
-
     precoDiv.appendChild(precoOriginal);
-    precoDiv.appendChild(tagDesconto);
     precoDiv.appendChild(precoDesconto);
 
     const parcelamento = document.createElement("p");
@@ -78,6 +73,16 @@ function criarProdutoCard(produto) {
   botao.setAttribute("id", produto.id);
   botao.setAttribute("aria-label", `Adicionar ${produto.nome} ao carrinho`);
   botao.textContent = "Adicionar ao carrinho";
+
+  botao.onclick = async () => {
+    const sucesso = await API.adicionarAoCarrinho(produto.id);
+    if (sucesso) {
+      alert(`${produto.nome} foi adicionado ao carrinho!`);
+    } else {
+      alert("Erro ao adicionar produto ao carrinho.");
+    }
+  };
+
   produtoCard.appendChild(img);
   produtoCard.appendChild(nome);
   produtoCard.appendChild(precoDiv);

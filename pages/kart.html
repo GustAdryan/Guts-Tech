@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="../styles/kart-css/header-kart.css" />
+    <link rel="stylesheet" href="../styles/kart-css/main-kart.css">
+  </head>
+  <body>
+    <header class="header-kart">
+      <section class="main-header-kart">
+        <div class="main-header-kart-logo-container">
+          <button class="main-header-kart-button-back">
+            <a href="../index.html" class="main-header-kart-button-back-link">
+              <img
+                src="../img/arrow.png"
+                alt=""
+                class="main-header-kart-button-back-link-img"
+              />
+              <span class="main-header-kart-button-back-link-span">Voltar</span>
+            </a>
+          </button>
+          <img
+            src="../img/logo.svg"
+            alt="Logo Guts Tech"
+            class="logo-header-kart"
+          />
+        </div>
+      </section>
+    </header>
+    <main class="main-kart">
+      <section class="main-kart-container">
+        <div class="main-kart-container-title">
+          <h1 class="main-kart-container-title-h1">Carrinho de Compras</h1>
+        </div>
+        <section id="carrinho-itens">
+          <div class="carrinho-item">
+            <img
+              src="https://www.amd.com/content/dam/amd/en/images/products/processors/ryzen/2505503-ryzen-7-5800x.jpg"
+              alt="Processador AMD Ryzen 7 5800X"
+              class="carrinho-img"
+              onerror="this.src='imagem-padrao.png'"
+            />
+            <div class="carrinho-dados">
+              <h3>Processador AMD Ryzen 7 5800X</h3>
+              <p>Preço: R$ 1799,00</p>
+            </div>
+          </div>
+        </section>
+        <span id="total-carrinho"></span>
+        <button id="limpar-carrinho">Limpar Carrinho</button>
+
+      </section>
+      <script type="module" src="../JS/products.js"></script>
+      <script type="module" src="../JS/kart.js"></script>
+  </body>
+</html>
