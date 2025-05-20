@@ -33,7 +33,7 @@
 
 #search-products {
   content: "";
-  background-image: url("/img/search-icon.svg");
+  background-image: url("../img/search-icon.svg");
   background-repeat: no-repeat;
   background-size: 1.75rem;
   background-position-x: 99%;

@@ -1,0 +1,52 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Placa Mãe B450M Legendary",
+      "descricao": "Compatível com processadores AMD Ryzen, suporte a DDR4, M.2 NVMe e USB 3.1.",
+      "preco": 549.9,
+      "desconto": true,
+      "imagem": "https://img.terabyteshop.com.br/produto/g/placa-mae-superframe-b450m-legendary-series-chipset-b450-amd-am4-matx-ddr4-sf-b450-ls_193029.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Processador AMD Ryzen 7 5800X",
+      "descricao": "Potência e eficiência para gamers e criadores de conteúdo.",
+      "preco": 1799.0,
+      "desconto": true,
+      "imagem": "https://www.amd.com/content/dam/amd/en/images/products/processors/ryzen/2505503-ryzen-7-5800x.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Processador Intel Core i5-12400F",
+      "descricao": "Desempenho sólido com 6 núcleos e 12 threads, ideal para gamers e tarefas multitarefa.",
+      "preco": 609.99,
+      "desconto": true,
+      "imagem": "https://img.terabyteshop.com.br/produto/g/processador-intel-core-i5-12400f-25ghz-44ghz-turbo-12-geracao-6-cores-12-threads-lga-1700-bx8071512400f_135083.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Processador AMD Ryzen 5 5500",
+      "descricao": "Processador de 6 núcleos e 12 threads com arquitetura Zen 3, ideal para tarefas diárias e jogos.",
+      "preco": 509.9,
+      "desconto": true,
+      "imagem": "https://img.terabyteshop.com.br/produto/g/processador-amd-ryzen-5-5500-36ghz-42ghz-turbo-6-cores-12-threads-cooler-wraith-stealth-am4-100-100000457box_138946.jpg"
+    },
+    {
+      "id": 5,
+      "nome": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 4060 EAGLE OC 8GB GDDR6",
+      "descricao": "Placa de vídeo com arquitetura Ada Lovelace, 8GB GDDR6, suporte a DLSS 3 e Ray Tracing, ideal para jogos em Full HD.",
+      "preco": 2699.9,
+      "desconto": true,
+      "imagem": "https://img.terabyteshop.com.br/produto/g/placa-de-video-gigabyte-nvidia-geforce-rtx-4060-eagle-oc-8gb-gddr6-dlss-ray-tracing-gv-n4060eagle-oc-8gd_172915.png"
+    },
+    {
+      "id": 7,
+      "nome": "Placa de Vídeo Sapphire Pulse AMD Radeon RX 9070 XT Gaming 16GB GDDR6",
+      "descricao": "Placa de vídeo topo de linha com 16GB GDDR6, ideal para jogos em altíssima resolução com suporte a FSR e Ray Tracing.",
+      "preco": 4999.0,
+      "desconto": true,
+      "imagem": "https://img.terabyteshop.com.br/produto/g/placa-de-video-sapphire-pulse-amd-radeon-rx-9070-xt-gaming-16gb-gddr6-fsr-ray-tracing-11348-03-20g_231138.jpg"
+    }
+  ]
+}

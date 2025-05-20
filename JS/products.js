@@ -1,5 +1,10 @@
 const URL_BASE =
-  "https://gist.githubusercontent.com/GustAdryan/f8f2451c8a0b9d7a18e2e278e7028d44/raw/99436f9e613d45790ab34a9d746c231cc30da4b6/products.json";
+  "https://gist.githubusercontent.com/GustAdryan/8fe40e7183417bac78c568d280a75b98/raw/530cc3b6d1a26769563a522588cf71a43078f7fc/product.json";
+
+/* 
+    ao programar use a url http://localhost:3000/produtos
+    basta da abrir o terminal e digitar npm install e depois rodar o comando " cd "guts-tech vite" " "cd backend" e por fim "npx json-server products.json"
+  */
 
 const CARRINHO_STORAGE_KEY = "meu_carrinho";
 
@@ -15,13 +20,16 @@ const API = {
       const data = await resp.json();
       const json = typeof data === "string" ? JSON.parse(data) : data;
 
-      if (Array.isArray(json.produtos)) {
+      // Suportar tanto objeto com chave 'produtos' quanto array raiz
+      if (Array.isArray(json)) {
+        this.produtosCache = json;
+      } else if (Array.isArray(json.produtos)) {
         this.produtosCache = json.produtos;
-        return this.produtosCache;
       } else {
-        console.error("Estrutura inesperada:", json);
-        return [];
+        console.error("Estrutura inesperada de resposta:", json);
+        this.produtosCache = [];
       }
+      return this.produtosCache;
     } catch (error) {
       console.error("Erro ao carregar produtos:", error);
       return [];
