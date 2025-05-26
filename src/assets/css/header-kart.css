@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #4f468c;
+  --gradient: linear-gradient(
+    300deg,
+    rgba(79, 70, 140, 1) 0%,
+    rgba(67, 55, 137, 1) 50%,
+    rgba(61, 52, 124, 1) 100%
+  );
+  --text-color: #000;
+  --font-family: "Roboto", sans-serif;
+  --font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.header-kart {
+  background-color: var(--secondary-color);
+}
+
+.main-header-kart {
+  padding: 20px;
+}
+
+.main-header-kart-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-header-kart {
+  width: 128px;
+  height: auto;
+}
+
+.main-header-kart-button-back {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-header-kart-button-back:hover {
+  background-color: #584ca5;
+}
+
+.main-header-kart-button-back-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: var(--font-family);
+}
+
+.main-header-kart-button-back-link-img {
+  width: 16px;
+  height: auto;
+  margin-right: 8px;
+  filter: brightness(0) invert(1);
+  transform: rotate(180deg);
+}
+
+.main-header-kart-button-back-link-span {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+}

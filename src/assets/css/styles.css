@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@import url("/src/assets/css/header.css");
+@import url("/src/assets/css/main.css");
+@import url("/src/assets/css/promo.css");
+@import url("/src/assets/css/products.css");
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #4f468c;
+  --gradient: linear-gradient(
+    300deg,
+    rgba(79, 70, 140, 1) 0%,
+    rgba(67, 55, 137, 1) 50%,
+    rgba(61, 52, 124, 1) 100%
+  );
+  --text-color: #000;
+  --font-family: "Roboto, sans-serif";
+  --font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}

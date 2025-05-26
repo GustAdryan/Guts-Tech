@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="/src/assets/css/header-kart.css" />
+    <link rel="stylesheet" href="/src/assets/css/main-kart.css">
+  </head>
+  <body>
+    <header class="header-kart">
+      <section class="main-header-kart">
+        <div class="main-header-kart-logo-container">
+          <button class="main-header-kart-button-back">
+            <a href="/index.html" class="main-header-kart-button-back-link">
+              <img
+                src="/src/assets/img/arrow.png"
+                alt=""
+                class="main-header-kart-button-back-link-img"
+              />
+              <span class="main-header-kart-button-back-link-span">Voltar</span>
+            </a>
+          </button>
+          <img
+            src="/src/assets/img/logo.svg"
+            alt="Logo Guts Tech"
+            class="logo-header-kart"
+          />
+        </div>
+      </section>
+    </header>
+    <main class="main-kart">
+      <section class="main-kart-container">
+        <div class="main-kart-container-title">
+          <h1 class="main-kart-container-title-h1">Carrinho de Compras</h1>
+        </div>
+        <section id="carrinho-itens">
+        </section>
+        <span id="total-carrinho"></span>
+        <button id="limpar-carrinho">Limpar Carrinho</button>
+
+      </section>
+      <script type="module" src="/src/scripts/products.js"></script>
+      <script type="module" src="/src/scripts/kart.js"></script>
+  </body>
+</html>
