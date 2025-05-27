@@ -1,119 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guts Tech - Loja Virtual de Hardware</title>
+
+    <!-- Google Fonts Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link para seu CSS personalizado -->
     <link rel="stylesheet" href="./src/assets/css/styles.css" />
   </head>
-  <body>
-    <header class="header">
-      <section class="main-header">
-        <div class="main-header-logo-container">
-          <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
-            <img src="./src/assets/img/menu.svg" alt="Menu" />
+  <body class="flex flex-col min-h-screen bg-white text-black font-sans">
+    <header class="bg-white shadow-md relative z-50">
+      <section class="flex items-center justify-between px-4 py-3 md:px-8">
+        <div class="flex items-center gap-4">
+          <button id="menu-toggle" class="md:hidden" aria-label="Abrir menu">
+            <img src="./src/assets/img/menu.svg" alt="Menu" class="w-6 h-6" />
           </button>
           <img
             src="./src/assets/img/logo.svg"
             alt="Logo Guts Tech"
-            class="Logo-header"
+            class="w-32 md:w-40"
           />
         </div>
 
-        <div class="main-header-search">
-          <input
-            type="search"
-            name="search-products"
-            id="search-products"
-            placeholder="O que você procura?"
-            aria-label="Buscar produtos"
-          />
-        </div>
-
-        <div class="main-header-kart">
+        <div>
           <a href="./src/pages/kart.html" aria-label="Carrinho de compras">
-            <img src="./src/assets/img/kart.svg" alt="Carrinho de compras" />
+            <img
+              src="./src/assets/img/kart.svg"
+              alt="Carrinho"
+              class="w-6 h-6"
+            />
           </a>
         </div>
       </section>
 
-      <nav class="header-nav" id="mobile-menu">
-        <ul class="header-nav-list">
-          <li class="header-nav-list-item">
-            <button class="header-nav-list-item-button">PC Gamer</button>
+      <nav
+        id="menu-list"
+        class="fixed top-100 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+      >
+        <ul class="flex flex-col gap-2 p-6 text-gray-800 font-medium">
+          <li>
+            <button
+              class="text-left px-3 py-2 rounded hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+            >
+              PC Gamer
+            </button>
           </li>
-          <li class="header-nav-list-item">
-            <button class="header-nav-list-item-button">Notebooks</button>
+          <li>
+            <button
+              class="text-left px-3 py-2 rounded hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+            >
+              Notebooks
+            </button>
           </li>
-          <li class="header-nav-list-item">
-            <button class="header-nav-list-item-button">Monitores</button>
+          <li>
+            <button
+              class="text-left px-3 py-2 rounded hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+            >
+              Monitores
+            </button>
           </li>
-          <li class="header-nav-list-item">
-            <button class="header-nav-list-item-button">Periféricos</button>
+          <li>
+            <button
+              class="text-left px-3 py-2 rounded hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+            >
+              Periféricos
+            </button>
           </li>
-          <li class="header-nav-list-item">
-            <button class="header-nav-list-item-button">Suporte</button>
+          <li>
+            <button
+              class="text-left px-3 py-2 rounded hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+            >
+              Suporte
+            </button>
           </li>
+        </ul>
+      </nav>
+
+      <nav class="hidden md:flex justify-center bg-white">
+        <ul class="flex gap-6 py-4 text-gray-800 font-medium">
+          <li><button>PC Gamer</button></li>
+          <li><button>Notebooks</button></li>
+          <li><button>Monitores</button></li>
+          <li><button>Periféricos</button></li>
+          <li><button>Suporte</button></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <section class="container-ad">
-        <div class="Promocao-inverno">
-          <img
-            src="./src/assets/img/gutsFeliz.svg"
-            alt="Personagem da Loja Guts Tech Feliz"
-            class="Promocao-inverno-img"
-          />
-          <div class="Promocao-inverno-content">
-            <h2>Promoção Inverno Gamer da <strong>Guts Tech</strong></h2>
-            <p>Produtos com descontos de até <strong>20%</strong></p>
-          </div>
-        </div>
-      </section>
-      <section class="produto-destaque">
-        <h2>Ofertas Imperdíveis</h2>
-        <div class="carousel-container">
-          <button id="prev-button" class="carousel-button">
-            <img src="./src/assets/img/arrow.png" alt="Anterior" />
-          </button>
-
-          <div id="produtos-promocao" class="carousel-produtos"></div>
-
-          <button id="next-button" class="carousel-button">
-            <img src="./src/assets/img/arrow.png" alt="Próximo" />
-          </button>
+    <main class="flex-grow container mx-auto p-4 space-y-10">
+      <section
+        class="bg-gradient-custom rounded-lg flex flex-col md:flex-row items-center p-6 space-y-4 md:space-y-0 md:space-x-6 text-gray-900"
+        aria-label="Promoção Inverno Gamer"
+      >
+        <img
+          src="./src/assets/img/gutsFeliz.svg"
+          alt="Personagem da Loja Guts Tech Feliz"
+          class="w-48 md:w-64"
+        />
+        <div>
+          <h2 class="text-2xl font-semibold">
+            Promoção Inverno Gamer da <strong>Guts Tech</strong>
+          </h2>
+          <p class="text-lg">
+            Produtos com descontos de até <strong>20%</strong>
+          </p>
         </div>
       </section>
 
-      <section>
-        <h2>Produtos</h2>
-        <div id="produtos"></div>
+      <section class="produto-destaque px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4 text-center">Ofertas Imperdíveis</h2>
+
+        <div class="relative flex items-center">
+          <!-- Botão Anterior -->
+          <button
+            id="prev-button"
+            class="p-2 bg-gray-200 hover:bg-gray-300 rounded-full shadow transition"
+            aria-label="Anterior"
+          >
+            <img
+              src="./src/assets/img/arrow.png"
+              alt="Anterior"
+              class="w-4 rotate-180"
+            />
+          </button>
+
+          <!-- Container de Produtos com Scroll Horizontal -->
+          <div
+            id="produtos-promocao"
+            class="flex overflow-x-auto scroll-smooth space-x-4 px-4 no-scrollbar"
+          ></div>
+
+          <!-- Botão Próximo -->
+          <button
+            id="next-button"
+            class="p-2 bg-gray-200 hover:bg-gray-300 rounded-full shadow transition"
+            aria-label="Próximo"
+          >
+            <img src="./src/assets/img/arrow.png" alt="Próximo" class="w-4" />
+          </button>
+        </div>
+      </section>
+
+      <section aria-label="Produtos">
+        <h2 class="text-2xl font-semibold mb-4">Produtos</h2>
+        <div
+          id="produtos"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Produtos serão inseridos aqui -->
+        </div>
       </section>
     </main>
 
-    <footer>
-      <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>
-          Na Guts Tech, somos apaixonados por tecnologia. Trabalhamos com os
-          melhores componentes de hardware para oferecer qualidade, desempenho e
-          preço justo.
-        </p>
-      </section>
+    <footer class="bg-white border-t border-gray-200 py-8 mt-10">
+      <section
+        id="sobre"
+        class="container mx-auto px-4 mb-8 md:flex md:justify-between"
+      >
+        <div class="md:w-1/2">
+          <h2 class="text-xl font-semibold mb-2">Sobre Nós</h2>
+          <p>
+            Na Guts Tech, somos apaixonados por tecnologia. Trabalhamos com os
+            melhores componentes de hardware para oferecer qualidade, desempenho
+            e preço justo.
+          </p>
+        </div>
 
-      <section id="contato">
-        <h2>Contato</h2>
-        <p>Email: atendimento@gutstech.com.br</p>
-        <p>Telefone: (11) 99999-9999</p>
+        <div class="md:w-1/3 mt-6 md:mt-0">
+          <h2 class="text-xl font-semibold mb-2">Contato</h2>
+          <p>Email: atendimento@gutstech.com.br</p>
+          <p>Telefone: (11) 99999-9999</p>
+        </div>
       </section>
-      <p>&copy; 2025 Guts Tech. Todos os direitos reservados.</p>
+      <p class="text-center text-sm text-gray-500">
+        &copy; 2025 Guts Tech. Todos os direitos reservados.
+      </p>
     </footer>
+
     <script type="module" src="./src/scripts/products.js"></script>
     <script type="module" src="./src/scripts/main.js"></script>
     <script type="module" src="./src/scripts/ui.js"></script>
-    <script type="module" src="./src/components/menu-togge.js"></script>
+    <script src="./src/components/menu-togge.js" type="module"></script>
+
     <script type="module" src="./src/components/slide.js"></script>
   </body>
 </html>
