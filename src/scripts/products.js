@@ -1,10 +1,5 @@
 const URL_BASE = "http://localhost:3000/produtos";
 
-/* 
-    ao programar use a url http://localhost:3000/produtos
-    basta da abrir o terminal e digitar npm install e depois rodar o comando " cd "guts-tech vite" " "cd backend" e por fim "npx json-server products.json"
-  */
-
 const CARRINHO_STORAGE_KEY = "meu_carrinho";
 
 const API = {
@@ -19,7 +14,6 @@ const API = {
       const data = await resp.json();
       const json = typeof data === "string" ? JSON.parse(data) : data;
 
-      // Suportar tanto objeto com chave 'produtos' quanto array raiz
       if (Array.isArray(json)) {
         this.produtosCache = json;
       } else if (Array.isArray(json.produtos)) {
@@ -48,7 +42,16 @@ const API = {
     const carrinhoStr = localStorage.getItem(CARRINHO_STORAGE_KEY);
     if (carrinhoStr) {
       try {
-        this.carrinho = JSON.parse(carrinhoStr);
+        const parsed = JSON.parse(carrinhoStr);
+
+        this.carrinho = parsed.filter(
+          (item) =>
+            item &&
+            item.produto &&
+            typeof item.produto.id === "string" &&
+            typeof item.produto.preco === "number" &&
+            typeof item.quantidade === "number"
+        );
       } catch {
         this.carrinho = [];
       }
@@ -65,19 +68,48 @@ const API = {
     if (!this.carrinho.length) this.carregarCarrinhoDoStorage();
 
     const produto = await this.buscarProdutosPorId(id);
-    if (produto) {
-      this.carrinho.push(produto);
-      this.salvarCarrinhoNoStorage();
-      return true;
-    } else {
+    if (!produto) {
       console.warn("Produto não encontrado para adicionar ao carrinho:", id);
       return false;
     }
+
+    const itemIndex = this.carrinho.findIndex((item) => item.produto.id === id);
+
+    if (itemIndex !== -1) {
+      this.carrinho[itemIndex].quantidade += 1;
+    } else {
+      this.carrinho.push({ produto, quantidade: 1 });
+    }
+
+    this.salvarCarrinhoNoStorage();
+    return true;
   },
 
   obterCarrinho() {
     if (!this.carrinho.length) this.carregarCarrinhoDoStorage();
     return this.carrinho;
+  },
+
+  removerItemCarrinho(id) {
+    if (!this.carrinho.length) this.carregarCarrinhoDoStorage();
+
+    this.carrinho = this.carrinho.filter((item) => item.produto.id !== id);
+    this.salvarCarrinhoNoStorage();
+  },
+
+  diminuirQuantidade(id) {
+    if (!this.carrinho.length) this.carregarCarrinhoDoStorage();
+
+    const itemIndex = this.carrinho.findIndex((item) => item.produto.id === id);
+
+    if (itemIndex !== -1) {
+      if (this.carrinho[itemIndex].quantidade > 1) {
+        this.carrinho[itemIndex].quantidade -= 1;
+      } else {
+        this.carrinho.splice(itemIndex, 1);
+      }
+      this.salvarCarrinhoNoStorage();
+    }
   },
 
   limparCarrinho() {

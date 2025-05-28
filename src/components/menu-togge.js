@@ -1,8 +1,9 @@
-const toggle = document.getElementById("menu-toggle");
-const navList = document.querySelector(".header-nav-list");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const navList = document.getElementById("menu-list");
 
-toggle.addEventListener("click", () => {
-  navList.classList.toggle("active");
-  body.classList.toggle("menu-open");
+  toggle.addEventListener("click", () => {
+    navList.classList.toggle("-translate-x-full");
+    navList.classList.toggle("translate-x-0");
+  });
 });
