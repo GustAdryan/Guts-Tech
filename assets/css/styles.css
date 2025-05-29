@@ -39,3 +39,9 @@ body {
 .text-primary {
   color: var(--primary-color);
 }
+
+/* Resolver problema de scroll no mobile */
+.no-scroll{
+  overflow: hidden;
+  height: 100vh;
+}
