@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #4f468c;
+  --gradient: background: #c1e8f7;
+  --background: radial-gradient(circle, rgba(193, 232, 247, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  --text-color: #000;
+  --font-family: "Roboto", sans-serif;
+  --font-size: 16px;
+}
+
+/* Reset básico (Tailwind já faz isso, mas deixa caso queira) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* Classe para seu gradiente customizado */
+.bg-gradient-custom {
+  background: var(--background);
+}
+
+/* Cor secundária para textos */
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+/* Cores primárias para texto claro (ex: dentro do gradiente escuro) */
+.text-primary {
+  color: var(--primary-color);
+}
+
+/* Resolver problema de scroll no mobile */
+.no-scroll{
+  overflow: hidden;
+  height: 100vh;
+}
